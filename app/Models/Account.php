@@ -9,7 +9,7 @@ class Account extends Model
     protected $primaryKey = 'conta';
 
     protected $fillable = [
-        'balance'
+        'saldo'
     ];
 
 }
