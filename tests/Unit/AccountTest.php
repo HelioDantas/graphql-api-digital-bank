@@ -25,7 +25,7 @@ class AccountTest extends TestCase
         $saldo = $account->saldo - 20;
         $account->update(['saldo' => $saldo]);
 
-        $this->assertEquals(80, $account->saldo);
+        $this->assertEquals(80, $account->saldo );
 
     }
 
