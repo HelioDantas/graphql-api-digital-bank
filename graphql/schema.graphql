@@ -10,17 +10,12 @@ scalar DateTimeTz @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Da
 type Query {
     users: [User!]! @paginate(defaultCount: 10)
     user(id: ID @eq): User @find
-    hello:String
-    greet(name: String = "you"): String
     saldo(conta: ID @eq): Account @find
 }
 
 type Mutation {
-
     sacar(conta: ID @eq, valor:Float @eq): Account
     depositar(conta: ID @eq, valor:Float @eq): Account
-
-
 }
 type User {
     id: ID!
