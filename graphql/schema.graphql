@@ -17,7 +17,7 @@ type Query {
 
 type Mutation {
 
-    sacar(conta: ID @eq, valor:Float @eq): Account!
+    sacar(conta: ID @eq, valor:Float @eq): Account
     depositar(conta: ID @eq, valor:Float @eq): Account
 
 
