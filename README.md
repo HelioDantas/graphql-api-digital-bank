@@ -12,6 +12,12 @@
 > Apache/2.4.38
 
 
+
+##### URl da api .
+>http://graphql-api-digital-bank.herokuapp.com/graphql-playground
+>
+A [api](http://graphql-api-digital-bank.herokuapp.com/graphql-playground) está rodando no [heroku](https://dashboard.heroku.com/)
+
 ### Instruções.
 
 
