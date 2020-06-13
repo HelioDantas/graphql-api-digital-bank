@@ -1,6 +1,6 @@
 
 
-#Graphql api digital bank
+# Graphql api digital bank
 
 
 > Versão do laravel: 7.15.0
