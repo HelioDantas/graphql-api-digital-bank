@@ -59,7 +59,6 @@ class AccountsTest extends TestCase
 
     public function testMutationsAccountsSacarContaNaoExiste(): void
     {
-        $valorSacado = (float)100 - 20;
         $this->graphQL(/** @lang GraphQL */ '
            mutation Sacar($conta:ID) {    
                   sacar(conta:$conta, valor:20) {   
@@ -70,8 +69,8 @@ class AccountsTest extends TestCase
         ', ['conta' => 70999888])
             ->assertStatus(200)
             ->assertJson([
-                'data' => [
-                    'sacar' => null
+                'errors' => [
+                    ['message' => "Conta 70999888 não existe"]
                 ]
             ]);
 
@@ -123,7 +122,7 @@ class AccountsTest extends TestCase
 
     }
 
-    public function testMutationsAccountsDepositarContaCasoNaoExistaRetornaNull(): void
+    public function testMutationsAccountsDepositarContaCasoNaoExistaRetornaErro(): void
     {
 
         $this->graphQL(/** @lang GraphQL */ '
@@ -136,8 +135,8 @@ class AccountsTest extends TestCase
         ', ['conta' => 809807878])
             ->assertStatus(200)
             ->assertJson([
-                'data' => [
-                    'depositar' => null
+                'errors' => [
+                    ['message' => "Conta 809807878 não existe"]
                 ]
             ]);
 
