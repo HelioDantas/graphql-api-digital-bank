@@ -18,7 +18,38 @@
 >
 A [api](http://graphql-api-digital-bank.herokuapp.com/graphql-playground) está rodando no [heroku](https://dashboard.heroku.com/)
 
-### Instruções.
+
+### Instruções rodando a aplicação com docker.
+
+
+
+
+1. Clone o repositorio `git clone https://github.com/HelioDantas/DockerLaravel.git`
+
+1. Crie um pasta `app` diretorio `www` na raiz do DockerLaravel e mova some o conteudo de dentro da pasta graphql-api-digital-bank para  pasta `app`.
+
+3. `docker-compose up` para rodar a imagem no modo interativo.(Rodando na porta 80)
+
+4.  Crie o arquivo .env a parte do .env.exemple e coloque as credencias de banco de dados(use mysql)
+
+5.  Rode o comando `composer install` para instalar as dependencias
+
+6.  Rode o comando ` php artisan migrate` para crias as tabelas no banco de dados
+
+7.  Você pode usar o [Laravel GraphQL Playground ](https://github.com/mll-lab/laravel-graphql-playground) para fazer as consulta na api, estará disponivel na rota /graphql-playground (http://127.0.0.1/graphql-playground)
+
+8.  Agora é só usar!!!
+
+9.  Para rodar os test use o comando ` php artisan test`(irá gerar o relatorio de cobertura na pasta report na raiz do projeto)
+
+10. Para criar dados no banco de dados rode o comando `php artisan tinker`
+
+11. Com o tinker aberto rode o comando: `factory(App\Models\Account::class, 100)->create()`
+
+12. Caso esteja em produção use o comando `php artisan db:seed --class=AccountSeeder`
+
+
+### Instruções rodando a aplicação com o artisan.
 
 
 1.  Crie o arquivo .env a parte do .env.exemple e coloque as credencias de banco de dados(use mysql)
