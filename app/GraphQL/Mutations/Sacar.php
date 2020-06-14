@@ -23,7 +23,8 @@ class Sacar
     {
         $conta = Account::query()->find($args['conta']);
         if (empty($conta)) {
-            return null;
+            $conta = $args['conta'];
+            throw new CustomException("Conta {$conta} não existe");
         }
         if ($conta->saldo >= $args['valor']) {
             $newSaldo = (float)$conta->saldo - $args['valor'];
@@ -31,6 +32,6 @@ class Sacar
             $conta->save();
             return $conta;
         }
-        throw new CustomException('Saldo insuficiente.', 'graphql');
+        throw new CustomException('Saldo insuficiente.');
     }
 }
